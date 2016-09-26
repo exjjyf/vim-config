@@ -171,7 +171,7 @@ let g:rubycomplete_buffer_loading=1
 "| @brief	tagbar config						|
 "| @date	2016-09-26							|
 "+----------------------------------------------+
-nmap <silent><F3> :Tagbaroggle<CR>
+nmap <silent><F3> :TagbarToggle<CR>
 let g:tagbar_autoclose=1
 let g:tagbar_autofocus=1
 let g:tagbar_left=1
