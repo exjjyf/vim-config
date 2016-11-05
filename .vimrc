@@ -16,16 +16,19 @@ call vundle#rc()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-pathogen'
+" Plugin 'tpope/vim-pathogen'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/OmniCppComplete'
+" Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/ListToggle'
+Plugin 'scrooloose/syntastic'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
@@ -38,7 +41,7 @@ filetype plugin indent on     " required
 "| @date	2016-09-25							|
 "+----------------------------------------------+
 
-execute pathogen#infect()
+" execute pathogen#infect()
 syntax on
 set number
 set cursorline
@@ -126,46 +129,46 @@ imap <silent><C-A> <ESC><C-A>
 nmap <silent><leader>av :AV<CR>
 imap <silent><leader>av <ESC><C-A><C-V>
 
-"+----------------------------------------------+
-"| @brief	OmniCppComplete config				|
-"| @date	2016-09-26							|
-"+----------------------------------------------+
-set tags+=~/.vim/tags/cpp "C++ STL
-" set tags+=~/.vim/tags/boost "boost
+" "+----------------------------------------------+
+" "| @brief	OmniCppComplete config				|
+" "| @date	2016-09-26							|
+" "+----------------------------------------------+
+" set tags+=~/.vim/tags/cpp "C++ STL
+" " set tags+=~/.vim/tags/boost "boost
 
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif "auto close complete window
-set completeopt=menuone,menuone " other choose longest,menu
+" au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif "auto close complete window
+" set completeopt=menuone,menuone " other choose longest,menu
 
-let OmniCpp_NamespaceSearch=2
-let OmniCpp_GlobalScopeSearch=1
-let OmniCpp_DisplayMode=1			" always show all members
-let OmniCpp_ShowScopeInAbbr=0
-let OmniCpp_ShowAccess=1
-let OmniCpp_ShowPrototypeInAbbr=1	" show function parameter lists
-let OmniCpp_MayCompleteDot=1		" complete after .
-let OmniCpp_MayCompleteArrow=1		" complete after ->
-let OmniCpp_MayCompleteScope=1		" complete after ::
-let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD", "__gnu_cxx"]
-let OmniCpp_SelectFirstItem=0		" select first but don't change
-let OmniCpp_LocalSearchDecl=1
+" let OmniCpp_NamespaceSearch=2
+" let OmniCpp_GlobalScopeSearch=1
+" let OmniCpp_DisplayMode=1			" always show all members
+" let OmniCpp_ShowScopeInAbbr=0
+" let OmniCpp_ShowAccess=1
+" let OmniCpp_ShowPrototypeInAbbr=1	" show function parameter lists
+" let OmniCpp_MayCompleteDot=1		" complete after .
+" let OmniCpp_MayCompleteArrow=1		" complete after ->
+" let OmniCpp_MayCompleteScope=1		" complete after ::
+" let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD", "__gnu_cxx"]
+" let OmniCpp_SelectFirstItem=0		" select first but don't change
+" let OmniCpp_LocalSearchDecl=1
 
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType java set omnifunc=javacomplete#Complete
+" autocmd FileType c set omnifunc=ccomplete#Complete
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-if has("autocmd") && exists("+omnifunc")
-	autocmd Filetype *
-	\ if &omnifunc == "" |
-	\    setlocal omnifunc=syntaxcomplete#Complete |
-	\ endif
-endif
-let g:rubycomplete_buffer_loading=1
+" if has("autocmd") && exists("+omnifunc")
+"     autocmd Filetype *
+"     \ if &omnifunc == "" |
+"     \    setlocal omnifunc=syntaxcomplete#Complete |
+"     \ endif
+" endif
+" let g:rubycomplete_buffer_loading=1
 
 "+----------------------------------------------+
 "| @brief	tagbar config						|
@@ -176,14 +179,14 @@ let g:tagbar_autoclose=1
 let g:tagbar_autofocus=1
 let g:tagbar_left=1
 
-"+----------------------------------------------+
-"| @brief	supertab							|
-"| @date	2016-09-26							|
-"+----------------------------------------------+
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-N><C-P>"
-let g:SuperTabNoCompleteAfter=['/', ',', '\s', ':', ';', ')', '}', '{', '(', '<', '>', '|']
-let g:SuperTabCompletionContexts=['s:ContextText']
+" "+----------------------------------------------+
+" "| @brief	supertab							|
+" "| @date	2016-09-26							|
+" "+----------------------------------------------+
+" let g:SuperTabRetainCompletionType=2
+" let g:SuperTabDefaultCompletionType="<C-X><C-N><C-P>"
+" let g:SuperTabNoCompleteAfter=['/', ',', '\s', ':', ';', ')', '}', '{', '(', '<', '>', '|']
+" let g:SuperTabCompletionContexts=['s:ContextText']
 
 "+----------------------------------------------+
 "| @brief 	custom command config				|
@@ -197,3 +200,16 @@ if !exists(':Ctags')
 	command! Ctags call Ctags()
 endif
 
+"+----------------------------------------------+
+"| @brief	YouCompleteMe config				|
+"| @date	2016-11-06							|
+"+----------------------------------------------+
+let g:ycm_key_invoke_completion = '<C-v>'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>e :YcmDiags<CR>
+nnoremap <silent><F4> :YcmShowDetailedDiagnostic<CR>
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+""Do not ask when starting vim
+let g:ycm_confirm_extra_conf = 0
+let g:syntastic_always_populate_loc_list = 1
