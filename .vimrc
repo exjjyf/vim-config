@@ -29,6 +29,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
+Plugin 'echofunc.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
@@ -213,3 +214,7 @@ nnoremap <silent><F4> :YcmShowDetailedDiagnostic<CR>
 ""Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list = 1
+
+let g:EchoFuncLangsUsed=["cpp"]
+let g:EchoFuncKeyNext='<C-X><C-N>'
+let g:EchoFuncKeyPrev='<C-x><C-P>'
