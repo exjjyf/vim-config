@@ -50,7 +50,7 @@ set cursorline
 set foldmethod=syntax
 set foldlevel=100
 
-" set encoding=utf-8
+set encoding=utf-8
 
 set history=1000
 
@@ -218,3 +218,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:EchoFuncLangsUsed=["cpp"]
 let g:EchoFuncKeyNext='<C-X><C-N>'
 let g:EchoFuncKeyPrev='<C-x><C-P>'
+
