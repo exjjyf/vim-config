@@ -30,6 +30,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'echofunc.vim'
+Plugin 'DoxygenToolkit.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
@@ -219,3 +220,10 @@ let g:EchoFuncLangsUsed=["cpp"]
 let g:EchoFuncKeyNext='<C-X><C-N>'
 let g:EchoFuncKeyPrev='<C-x><C-P>'
 
+"+----------------------------------------------+
+"| @brief	DoxygenToolkit config				|
+"| @date	2017-02-04							|
+"+----------------------------------------------+
+let g:DoxygenToolkit_authorName="jinyifan,jyf100621@163.com"
+let g:DoxygenToolkit_briefTag_funcName="yes"
+let g:doxygen_enhanced_color=1
