@@ -31,6 +31,8 @@ Plugin 'Valloric/ListToggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'echofunc.vim'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-dispatch'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
@@ -216,6 +218,9 @@ nnoremap <silent><F4> :YcmShowDetailedDiagnostic<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list = 1
 
+autocmd FileType php setlocal omnifunc=phpcomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 let g:EchoFuncLangsUsed=["cpp"]
 let g:EchoFuncKeyNext='<C-X><C-N>'
 let g:EchoFuncKeyPrev='<C-x><C-P>'
@@ -227,3 +232,22 @@ let g:EchoFuncKeyPrev='<C-x><C-P>'
 let g:DoxygenToolkit_authorName="jinyifan,jyf100621@163.com"
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
+
+"+----------------------------------------------+
+"| @Brief 插件EchoFunc配置                      |
+"| @Date 2017-02-04                             |
+"+----------------------------------------------+
+let g:EchoFuncLangsUsed=["cpp"]
+let g:EchoFuncKeyNext='<C-X><C-N>'
+let g:EchoFuncKeyPrev='<C-X><C-P>'
+
+"+----------------------------------------------+
+"| @Brief 插件ack配置                           |
+"| @Date 2017-02-04                             |
+"+----------------------------------------------+
+let g:ack_default_options=' -s -H --nocolor --nogroup --column --smart-case --follow --ignore-file=is:tags'
+let g:ackhighlight=1
+let g:ack_autoclose=1
+let g:ack_use_dispatch=1
+map <silent><F6> :Ack -w <C-R>=expand("<cword>")<CR> <C-R>=expand('%:p:h:t')<CR><CR>
+map <silent><C-c> :Ack -w <C-R>=expand("<cword>")<CR><CR>
