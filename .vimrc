@@ -221,10 +221,6 @@ let g:syntastic_always_populate_loc_list = 1
 autocmd FileType php setlocal omnifunc=phpcomplete#Complete
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
-let g:EchoFuncLangsUsed=["cpp"]
-let g:EchoFuncKeyNext='<C-X><C-N>'
-let g:EchoFuncKeyPrev='<C-x><C-P>'
-
 "+----------------------------------------------+
 "| @brief	DoxygenToolkit config				|
 "| @date	2017-02-04							|
