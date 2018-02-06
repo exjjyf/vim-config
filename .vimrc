@@ -213,7 +213,7 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>e :YcmDiags<CR>
 nnoremap <silent><F4> :YcmShowDetailedDiagnostic<CR>
-"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 ""Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list = 1
@@ -228,6 +228,8 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 let g:DoxygenToolkit_authorName="jinyifan,jyf100621@163.com"
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
+let g:DoxygenToolkit_versionString="1.0"
+autocmd BufNewFile *.[ch],*.hpp,*.cpp exec ":DoxAuthor"
 
 "+----------------------------------------------+
 "| @Brief 插件EchoFunc配置                      |
