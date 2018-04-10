@@ -109,7 +109,7 @@ let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left 
 syntax enable
 set background=dark
 colorscheme solarized
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 
 "+----------------------------------------------+
 "| @brief	airline config						|
@@ -121,8 +121,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airlien_theme="solarized"
-nmap <silent><C-p> :tabp<CR>
-nmap <silent><C-n> :tabn<CR>
+"nmap <silent><C-p> :tabp<CR>
+"nmap <silent><C-n> :tabn<CR>
 
 "+----------------------------------------------+
 "| @brief	a config							|

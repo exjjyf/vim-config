@@ -1,9 +1,13 @@
 # vim-config
 my vimrc file
 
+2018-2-6
+NOTICE:
+	change something to help use in new system
+
 2017-01-31
 NOTICE:
-	ADD install.py for easily to use vim for new machine
+	ADD install.sh for easily to use vim for new machine
 
 2016-11-06
 NOTICE:
