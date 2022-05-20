@@ -7,7 +7,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 #安装所有插件
 vim +PluginInstall +qall
 
-sudo apt install cmake build-essential
+sudo apt install cmake build-essential python3-dev
 
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
