@@ -10,5 +10,5 @@ vim +PluginInstall +qall
 sudo apt install cmake build-essential python3-dev
 
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
-cp third_party/ycmd/cpp/ycm/.ycm_extra_conf.py ~/
+git submodule update --init --recursive
+python3 install.py --clangd-completer
